@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.card-style{
+    background-color: rgba(0, 0, 255, 0.877);
+    color: white;
+}
+.style1{
+    color: blue;
+}
+.style2{
+    color: red;
+}

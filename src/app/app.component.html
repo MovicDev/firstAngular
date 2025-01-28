@@ -1,0 +1,36 @@
+<!-- <div>
+  <h5>Welcome to level 4.</h5>
+</div> -->
+<!-- <div [ngSwitch]="day == 'monday'">
+  <div *ngSwitchCase="day == 'Sunday'">Today is Sunday</div>
+  <div *ngSwitchCase="day == 'Thursday'">Today is Thursday</div>
+  <div *ngSwitchDefault>Today is a day of the week</div>
+</div> -->
+<!-- <div *ngIf="condition; else elseblock">
+  <p>The condition is true</p>
+</div>
+<ng-template #elseblock>
+   <p>This condition is not true</p>
+</ng-template>
+
+<div [ngSwitch]="day">
+  <div *ngSwitchCase="'Monday'">Today is Monday</div>
+  <div *ngSwitchCase="'Tuesday'">Today is Tuesday</div>
+  <div *ngSwitchDefault>Pick one of the specified</div>
+</div>
+
+ngFor iteration/loops -->
+ <!-- <div *ngFor="let product of products; let i=index">
+      <div style="border:2px solid black; width:20%; margin-top: 10px; padding: 10px; border: 1px solid gray" [ngClass]="{'card-style': product.available}">
+        <p>{{i + 1}}</p>
+        <p>Name: {{product.name}}</p>
+        <p>Price: {{product.price}}</p>
+        <button (click)="addToCart(product)" style="padding: 8px;border-radius: 10px; background-color: black; color: white;">Add to cart</button>
+      </div>
+ </div>
+
+ <div [ngClass]="{style1: condition1, style2:condition2}">
+     Hello Movic! 
+ </div> -->
+ <app-navbar />
+ <router-outlet />

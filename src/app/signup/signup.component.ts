@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {FormsModule, FormBuilder, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
+import {Router} from '@angular/router'
+import { __values } from 'tslib';
 
 @Component({
   selector: 'app-signup',
@@ -13,20 +15,13 @@ export class SignupComponent {
 
   // userForm:FormGroup; //Creating new instance of the Formgroup class 
 
-      // constructor(
-      //   private _fb: FormBuilder,
-      //   private _formGroup: FormGroup
-      // ){
-      //  this.userForm = this._fb.group({
-      //     'full_name' : ['', [Validators.required]],
-      //     'email':['', [Validators.required,Validators.email]],
-      //     'phone_number': ['', [Validators.required, Validators.minLength(11)]],
-      //     'password': ['', [Validators.required,Validators.minLength(8)]]
-      //   })
-      // }
 
-      private fb = inject(FormBuilder)
 
+      private fb = inject(FormBuilder);
+      constructor(
+          private _router : Router
+      ){}
+      
       userForm = this.fb.group({
             'full_name' : ['', [Validators.required]],
             'email':['', [Validators.required,Validators.email]],
@@ -55,8 +50,8 @@ export class SignupComponent {
         console.log(this.userForm.get('full_nmae')?.errors);
         
       } else {
-        console.log('Form is valid');
-        
+        const name = this.userForm.get('full_name')?.value?.replaceAll(' ','-')
+        this._router.navigate(['/users/profile',name])
       }
       
     }

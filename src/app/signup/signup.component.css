@@ -118,14 +118,14 @@
   color: #000;
   font-size: 16px;
   transform: .3s ease;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
-.submit:hover {
+/* .submit:hover {
   background:transparent;
   border: 2px solid #fff;
   color: #fff;
-}
+} */
 
 @keyframes pulse {
   from {

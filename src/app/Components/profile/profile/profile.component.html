@@ -1,1 +1,25 @@
-<p>profile works!</p>
+<p>profile works! for  {{username}}</p>
+
+        <button type="button" class="btn btn-dark" (click)="changeName('janet')">changeName</button>
+
+<!-- <div *ngFor="let user of users; let i = index">
+    <p>{{i+1}}.{{user}}</p>
+</div> -->
+<div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="card my-2" *ngFor="let user of users; let i = index">
+          <div class="card-header">
+            <h4>{{ i + 1 }}.{{ user.ablumId }}</h4>
+          </div>
+          <div class="card-body">
+            <img src="{{ user.avatar_url }}" alt="userImage" class="img-fluid">
+            <p>
+              {{ user.login }}
+            </p>
+            <a href={{user.following_url}} class="btn btn-primary">Follow Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

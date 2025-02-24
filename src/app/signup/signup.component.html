@@ -1,42 +1,102 @@
-<!-- From Uiverse.io by ammarsaa --> 
+<!-- From Uiverse.io by ammarsaa -->
 <form class="form container mt-5" [formGroup]="userForm" (submit)="register()">
-    <p class="title">Register </p>
-    <p class="message">Signup now and get full access to our app. </p>
-        <label>
-            <input formControlName="full_name" class="input" type="text" placeholder="">
-            <span>Fullname</span>
-        </label>
-            <div *ngIf="userForm.get('full_name')?.invalid && userForm.get('full_name')?.touched">
-                <span class="text-danger text-sm" *ngIf="userForm.get('full_name')?.errors?.['required']">
-                    FullName is required
-                </span>
-            </div>
-    <label>
-        <input formControlName="email" class="input"  type="email" placeholder="">
-        <span>Email Adress</span>
-        <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
-            <span class="text-danger text-sm" *ngIf="userForm.get('email')?.errors?.['required']">
-                Email is required
-            </span>
-            <span class="text-danger text-sm" *ngIf="userForm.get('email')?.errors?.['email']">
-                Email is required
-            </span>
-        </div>
-    </label> 
-        
-    <label>
-        <input formControlName="phone_number" class="input" type="" placeholder="">
-        <span>Phone Number</span>
-        <div *ngIf="userForm.get('phone_number')?.invalid && userForm.get('phone_number')?.touched">
-            <span class="text-danger text-sm" *ngIf="userForm.get('phone_number')?.errors?.['required']">
-                Phone is required
-            </span>
-        </div>
-    </label>
-    <label>
-        <input formControlName="password" class="input" type="password" placeholder="">
-        <span>Password</span>
-    </label>
-    <button class="submit" type="submit">Submit</button>
-    <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
+  <p class="title">Register</p>
+  <p class="message">Signup now and get full access to our app.</p>
+  <label>
+    <input
+      formControlName="full_name"
+      class="input"
+      type="text"
+      placeholder=""
+    />
+    <span>Fullname</span>
+  </label>
+  <div
+    *ngIf="
+      userForm.get('full_name')?.invalid && userForm.get('full_name')?.touched
+    "
+  >
+    <span
+      class="text-danger text-sm"
+      *ngIf="userForm.get('full_name')?.errors?.['required']"
+    >
+      FullName is required
+    </span>
+  </div>
+  <label>
+    <input formControlName="email" class="input" type="email" placeholder="" />
+    <span>Email Adress</span>
+  </label>
+  <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+    <span
+      class="text-danger text-sm"
+      *ngIf="userForm.get('email')?.errors?.['required']"
+    >
+      Email is required
+    </span>
+    <span
+      class="text-danger text-sm"
+      *ngIf="userForm.get('email')?.errors?.['email']"
+    >
+      Email is required
+    </span>
+  </div>
+
+  <label>
+    <input
+      formControlName="phone_number"
+      class="input"
+      type=""
+      placeholder=""
+    />
+    <span>Phone Number</span>
+  </label>
+  <div
+    *ngIf="
+      userForm.get('phone_number')?.invalid &&
+      userForm.get('phone_number')?.touched
+    "
+  >
+    <span
+      class="text-danger text-sm"
+      *ngIf="userForm.get('phone_number')?.errors?.['required']"
+    >
+      Phone Number is required
+    </span>
+    <span
+      class="text-danger text-sm"
+      *ngIf="userForm.get('phone_number')?.errors?.['minlength']"
+    >
+      Invalid Phone Number
+    </span>
+  </div>
+  <label>
+    <input
+      formControlName="password"
+      class="input"
+      type="password"
+      placeholder=""
+    />
+    <span>Password</span>
+  </label>
+  <div
+    *ngIf="
+      userForm.get('Password')?.invalid && userForm.get('Password')?.touched
+    "
+  >
+    <span
+      class="text-danger text-sm"
+      *ngIf="userForm.get('Password')?.errors?.['required']"
+    >
+      Password is required
+    </span>
+    <span
+      class="text-danger text-sm"
+      *ngIf="userForm.get('Password')?.errors?.['minlength']"
+    >
+      Invalid Phone Number
+    </span>
+  </div>
+  <button class="submit" type="submit" [disabled]="userForm.invalid">Submit</button>
+  <p class="signin">Already have an acount ? <a href="#">Signin</a></p>
 </form>

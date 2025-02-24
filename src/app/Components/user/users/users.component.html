@@ -1,1 +1,24 @@
 <p>users works!</p>
+<!-- <div *ngFor="let user of users; let i = index">
+  <p>{{ i + 1 }}.{{ user }}</p>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="card my-2" *ngFor="let user of users; let i = index">
+        <div class="card-header">
+          <h4>{{ i + 1 }}.{{ user.name }}</h4>
+        </div>
+        <div class="card-body">
+          <p>
+            {{ user.email }}
+          </p>
+            <p>
+                {{ user.phone }}
+           </p>
+          <a href={{user.website}} class="btn btn-primary">Visit My Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

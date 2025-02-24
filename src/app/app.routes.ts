@@ -5,15 +5,17 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { UsersComponent } from './Components/user/users/users.component';
 import { ProfileComponent } from './Components/profile/profile/profile.component';
+import { MaterialComponent } from './Components/material/material.component';
 
 export const routes: Routes = [
     {path : '', component : HomeComponent, title: 'Home' },
     {path : 'Signup', component : SignupComponent, title: 'SignUp' },
     {path : 'Login', component : LoginComponent, title: 'Login' },
+    {path: 'AngularMaterial',component : MaterialComponent, title: 'AngularMaterial'},
     {path: 'home', redirectTo: '', pathMatch: 'full'},
     {path: 'users', children: [
         {path:'', component: UsersComponent},
-        {path:'profile', component: ProfileComponent}
+        {path:'profile/:name', component: ProfileComponent}
     ]},
     {path : '**', component : PageNotFoundComponent, title: '404|Page Not Found' },
 ];
